@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-
+import saqibImg from "./assets/saqib.jpg"; 
 export default function SaqibPortfolio() {
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
@@ -23,9 +23,9 @@ export default function SaqibPortfolio() {
         </div>
       </nav>
 
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4 mt-6">
     <img
-      src=""
+  src={saqibImg}
       alt="Saqib Ali"
       className="w-32 h-32 rounded-full border-4 border-purple-500 object-cover shadow-lg"
     />
