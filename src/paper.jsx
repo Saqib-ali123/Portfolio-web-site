@@ -25,7 +25,7 @@ export default function SaqibPortfolio() {
 
         <div className="flex justify-center mb-6">
     <img
-      src="https://img.freepik.com/premium-photo/great-picture-image-will-make-your-work-more-beautiful_987032-102143.jpg"
+      src=""
       alt="Saqib Ali"
       className="w-32 h-32 rounded-full border-4 border-purple-500 object-cover shadow-lg"
     />
