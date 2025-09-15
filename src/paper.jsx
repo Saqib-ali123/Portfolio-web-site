@@ -1,12 +1,43 @@
 import React from "react";
+import Swal from "sweetalert2";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import saqibImg from "./assets/saqib.jpg"; 
+
 export default function SaqibPortfolio() {
+  const handleDownload = (file, name) => {
+    // Show "Download started" popup
+    Swal.fire({
+      title: "Download Started",
+      text: `Your ${name} is being downloaded...`,
+      icon: "info",
+      timer: 2000,
+      showConfirmButton: false,
+    });
+
+    // Create a hidden link to trigger download
+    const link = document.createElement("a");
+    link.href = file;
+    link.download = name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Show "Download completed" popup after a short delay
+    setTimeout(() => {
+      Swal.fire({
+        title: "Download Complete",
+        text: `${name} downloaded successfully!`,
+        icon: "success",
+        timer: 2000,
+        showConfirmButton: false,
+      });
+    }, 1500);
+  };
+
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans">
       {/* Navbar */}
       <nav className="flex justify-between items-center p-6 bg-gray-900 shadow-md sticky top-0 z-50">
-        {/* <h1 className="text-2xl font-bold text-purple-400">Saqib Dev</h1> */}
         <div className="space-x-6">
           <a href="#about" className="hover:text-purple-300">
             About
@@ -23,15 +54,13 @@ export default function SaqibPortfolio() {
         </div>
       </nav>
 
-        <div className="flex justify-center mb-4 mt-6">
-    <img
-  src={saqibImg}
-      alt="Saqib Ali"
-      className="w-32 h-32 rounded-full border-4 border-purple-500 object-cover shadow-lg"
-    />
-  </div>
-
-      
+      <div className="flex justify-center mb-4 mt-6">
+        <img
+          src={saqibImg}
+          alt="Saqib Ali"
+          className="w-32 h-32 rounded-full border-4 border-purple-500 object-cover shadow-lg"
+        />
+      </div>
 
       {/* Hero Section */}
       <section className="text-center py-20 bg-gradient-to-b from-gray-900 to-gray-950">
@@ -60,12 +89,14 @@ export default function SaqibPortfolio() {
             <FaEnvelope />
           </a>
         </div>
-        <a href="/saqib.pdf" className="mt-8 inline-block bg-purple-600 px-6 py-2 rounded-full hover:bg-purple-500 text-white"
-          download="Saqib-Ali-CV.pdf"
+
+        {/* ✅ Download Resume with Alerts */}
+        <button
+          onClick={() => handleDownload("/saqib.pdf", "Saqib-Ali-CV.pdf")}
+          className="mt-8 inline-block bg-purple-600 px-6 py-2 rounded-full hover:bg-purple-500 text-white"
         >
           Download Resume
-        </a>
-
+        </button>
       </section>
 
       {/* About Section */}
@@ -74,12 +105,19 @@ export default function SaqibPortfolio() {
           About Me
         </h2>
         <p className="text-gray-300 text-lg">
-  I am a passionate B.Tech (CSE-AIML) student from TIT College Bhopal with a strong foundation in AI/ML and full-stack development. I specialize in building scalable, responsive, and production-ready web applications using modern frameworks like React.js, Django REST, and FastAPI.
-
-  <br /><br />
-  With hands-on experience in real-world freelance projects, I focus on delivering high-quality solutions tailored to client needs — from intuitive UIs to robust backend APIs. I’m always eager to collaborate, learn, and contribute to impactful products, whether it's a startup, freelance gig, or an enterprise-level MNC.
-</p>
-
+          I am a passionate B.Tech (CSE-AIML) student from TIT College Bhopal
+          with a strong foundation in AI/ML and full-stack development. I
+          specialize in building scalable, responsive, and production-ready web
+          applications using modern frameworks like React.js, Django REST, and
+          FastAPI.
+          <br />
+          <br />
+          With hands-on experience in real-world freelance projects, I focus on
+          delivering high-quality solutions tailored to client needs — from
+          intuitive UIs to robust backend APIs. I’m always eager to collaborate,
+          learn, and contribute to impactful products, whether it's a startup,
+          freelance gig, or an enterprise-level MNC.
+        </p>
       </section>
 
       {/* Skills Section */}
@@ -166,7 +204,7 @@ export default function SaqibPortfolio() {
         </div>
       </section>
 
-          {/* Contact Section */}
+      {/* Contact Section */}
       <section id="contact" className="px-6 py-12 max-w-4xl mx-auto">
         <h2 className="text-3xl font-semibold border-b border-purple-500 pb-2 mb-6">
           Contact
@@ -182,10 +220,7 @@ export default function SaqibPortfolio() {
         </p>
         <p className="text-lg text-gray-300">
           Phone:{" "}
-          <a
-            href="tel:+918871984531"
-            className="text-purple-400 underline"
-          >
+          <a href="tel:+918871984531" className="text-purple-400 underline">
             +91 8871984531
           </a>
         </p>
