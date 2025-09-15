@@ -60,13 +60,12 @@ export default function SaqibPortfolio() {
             <FaEnvelope />
           </a>
         </div>
-        <a
-          href="/saqib.pdf"
-          className="mt-8 inline-block bg-purple-600 px-6 py-2 rounded-full hover:bg-purple-500 text-white"
-          download
+        <a href="/saqib.pdf" className="mt-8 inline-block bg-purple-600 px-6 py-2 rounded-full hover:bg-purple-500 text-white"
+          download="Saqib-Ali-CV.pdf"
         >
           Download Resume
         </a>
+
       </section>
 
       {/* About Section */}
@@ -167,42 +166,6 @@ export default function SaqibPortfolio() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      {/* <section id="contact" className="px-6 py-12 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-semibold border-b border-purple-500 pb-2 mb-6">
-          Contact
-        </h2>
-        <p className="text-lg text-gray-300">
-          Email:{" "}
-          <a
-            href="mailto:sayyedsaqib406@gmail.com"
-            className="text-purple-400 underline"
-          >
-            sayyedsaqib406@gmail.com
-          </a>
-        </p>
-        <p className="text-lg text-gray-300">
-          LinkedIn:{" "}
-          <a
-            href="https://www.linkedin.com/in/sayyed-saqib-ali-39403a2b6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            className="text-purple-400 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            /in/sayyedsaqib406
-          </a>
-        </p>
-        <p className="text-lg text-gray-300">
-          GitHub:{" "}
-          <a
-            href="https://github.com/saqib-ali123"
-            className="text-purple-400 underline"
-            target="_blank"
-          >
-            @saqib-ali123
-          </a>
-        </p>
-      </section> */}
           {/* Contact Section */}
       <section id="contact" className="px-6 py-12 max-w-4xl mx-auto">
         <h2 className="text-3xl font-semibold border-b border-purple-500 pb-2 mb-6">
